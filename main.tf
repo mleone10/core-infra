@@ -29,16 +29,6 @@ resource "aws_route53_record" "root" {
   ]
 }
 
-resource "aws_route53_record" "homelab" {
-  zone_id = aws_route53_zone.mleone_dev.zone_id
-  name    = "avenir.mleone.dev"
-  type    = "A"
-  ttl     = 3600
-  records = [
-    "0.0.0.0"
-  ]
-}
-
 resource "aws_route53_record" "homelab_redirect" {
   zone_id = aws_route53_zone.mleone_dev.zone_id
   name    = "*.avenir.mleone.dev"
