@@ -1,4 +1,4 @@
-name: Build and test expense system
+name: Test and verify core infrastructure
 
 on: [pull_request]
 

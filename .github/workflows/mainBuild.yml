@@ -1,4 +1,4 @@
-name: Deploy expense system to aws
+name: Deploy core infrastructure
 
 on:
   push:
