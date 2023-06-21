@@ -27,7 +27,7 @@ jobs:
           role-session-name: CoreInfraMainWorkflow
           aws-region: us-east-1
       - name: set up terraform environment
-        run: terraform -chdir=infra init
+        run: terraform init
       - name: deploy infrastructure
         run: |
-          terraform -chdir=infra apply -auto-approve
+          terraform apply -auto-approve

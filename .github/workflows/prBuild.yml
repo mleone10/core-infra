@@ -23,11 +23,11 @@ jobs:
           role-session-name: CoreInfraPullRequestWorkflow
           aws-region: us-east-1
       - name: lint terraform config
-        run: terraform -chdir=infra fmt -check
+        run: terraform fmt -check
       - name: set up terraform environment
-        run: terraform -chdir=infra init
+        run: terraform init
       - name: validate terraform config
-        run: terraform -chdir=infra validate -no-color
+        run: terraform validate -no-color
       - name: plan terraform infrastructure
         run: |
-          terraform -chdir=infra plan -no-color -input=false
+          terraform plan -no-color -input=false
