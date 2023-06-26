@@ -36,3 +36,8 @@ resource "aws_route53_record" "homelab_redirect" {
   ttl     = 3600
   records = ["avenir.mleone.dev"]
 }
+
+output "zone_id" {
+  description = "Zone ID for mleone.dev hosted zone"
+  value       = aws_route53_zone.mleone_dev.id
+}
