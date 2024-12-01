@@ -37,6 +37,14 @@ resource "aws_route53_record" "homelab_redirect" {
   records = ["avenir.mleone.dev"]
 }
 
+resource "aws_route53_record" "bluesky_domain" {
+  zone_id = aws_route53_zone.mleone_dev.zone_id
+  name    = "_atproto"
+  type    = "TXT"
+  ttl     = 3600
+  records = ["did=did:plc:vrmm3txjmqcit4uyyrluihcq"]
+}
+
 output "zone_id" {
   description = "Zone ID for mleone.dev hosted zone"
   value       = aws_route53_zone.mleone_dev.id
