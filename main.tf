@@ -49,15 +49,3 @@ output "mleone_dev_zone_id" {
   description = "Zone ID for mleone.dev hosted zone"
   value       = aws_route53_zone.mleone_dev.id
 }
-
-################
-# IndieWeb.Quest
-################
-resource "aws_route53_zone" "indieweb_quest" {
-  name = "indieweb.quest"
-}
-
-output "indieweb_quest_zone_id" {
-  description = "Zone ID for indieweb.quest hosted zone"
-  value       = aws_route53_zone.indieweb_quest.id
-}
