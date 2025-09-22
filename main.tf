@@ -45,7 +45,7 @@ resource "aws_route53_record" "bluesky_domain" {
   records = ["did=did:plc:vrmm3txjmqcit4uyyrluihcq"]
 }
 
-output "zone_id" {
+output "mleone_dev_zone_id" {
   description = "Zone ID for mleone.dev hosted zone"
   value       = aws_route53_zone.mleone_dev.id
 }
@@ -57,7 +57,7 @@ resource "aws_route53_zone" "indieweb_quest" {
   name = "indieweb.quest"
 }
 
-output "zone_id" {
+output "indieweb_quest_zone_id" {
   description = "Zone ID for indieweb.quest hosted zone"
   value       = aws_route53_zone.indieweb_quest.id
 }
