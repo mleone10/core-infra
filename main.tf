@@ -16,12 +16,16 @@ resource "aws_route53_zone" "mleone_dev" {
   name = "mleone.dev"
 }
 
-resource "aws_route53_record" "homelab_redirect" {
+data "aws_route53_zone" "lab" {
+  name = "lab.mleone.dev"
+}
+
+resource "aws_route53_record" "lab_ns" {
   zone_id = aws_route53_zone.mleone_dev.zone_id
-  name    = "*.avenir.mleone.dev"
-  type    = "CNAME"
+  name    = "lab.mleone.dev"
+  type    = "NS"
   ttl     = 3600
-  records = ["avenir.mleone.dev"]
+  records = data.aws_route53_zone.lab.name_servers
 }
 
 resource "aws_route53_record" "bluesky_domain" {
