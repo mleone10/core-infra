@@ -1,9 +1,10 @@
 # Common infrastructure configuration
 terraform {
   backend "s3" {
-    bucket = "leone-terraform-states"
-    key    = "core-infra.tfstate"
-    region = "us-east-1"
+    bucket       = "leone-terraform-states"
+    key          = "core-infra.tfstate"
+    region       = "us-east-1"
+    use_lockfile = true
   }
 }
 
